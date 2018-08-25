@@ -12,6 +12,7 @@ import { Task } from '../../models/task.model';
 })
 export class TasksListComponent implements OnInit {
 
+
   tasks: Observable<Task>;
   errorMessage:string;
 
@@ -22,16 +23,27 @@ export class TasksListComponent implements OnInit {
   }
 
   list(){
-    
     this.taskService.getJSON()
     .subscribe(
       data => {
         this.tasks = data;
-       // console.log("dados = " + data[15].id);
-       // console.log("dados = " + data[15].name);
-
-        console.log("tasks = " + this.tasks[15].name);
       }, error => this.errorMessage = <any> error);
+    
+  }
+
+  public addTask(taskName) {
+      this.taskService.addTask(taskName);
+      this.list();
+  }
+
+
+  public updateTask(id) {
+   // this.taskService.updateTask(id).subscribe(res => {});
+  }
+
+  public deleteTask(id) {
+    this.taskService.deleteTask(id).subscribe(res => {});
+    this.list();
   }
 
 }

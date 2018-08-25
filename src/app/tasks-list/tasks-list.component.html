@@ -1,7 +1,40 @@
-<h2>Tasks List</h2>
+<mat-tab-group>
+  <mat-tab label="Tasks">
+    <div>
+      <mat-form-field>
+        <input matInput type="text" placeholder="New task" name="task_name" formControlName="task_name" #task_name />
+      </mat-form-field>
 
-<ul *ngIf="tasks">
-  <li *ngFor="let task of tasks">
-    {{task.name}} - {{task.status}}
-  </li>
-</ul>
+      <button mat-button (click)="addTask(task_name.value)">Add</button>
+    </div>
+
+    <ul *ngIf="tasks">
+      <table *ngFor="let task of tasks ">
+        <tr>
+          <td>{{task.name}}</td>
+          <td><button mat-button  ng-click="getvalue($event)" (click)="updateTask(task.id)">{{task.status}}</button></td>
+          <td><button mat-button (click)="deleteTask(task.id)">Delete</button></td>
+        </tr>
+      </table>
+    </ul>
+  </mat-tab>
+  <mat-tab label="Reports">
+    <mat-form-field>
+      <input matInput type="text" value="created" />
+      <Span>sdad</Span>
+    </mat-form-field>
+    <mat-form-field>
+      <input matInput type="text" value="done" />
+      <Span>sdad</Span>
+    </mat-form-field>
+    <mat-form-field>
+      <input matInput type="text" value="pending" />
+      <Span>sdad</Span>
+    </mat-form-field>
+    <mat-form-field>
+      <input matInput type="text" value="avarage time per task" />
+      <Span>sdad</Span>
+    </mat-form-field>
+  </mat-tab>
+</mat-tab-group>
+

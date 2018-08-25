@@ -8,6 +8,8 @@ import { TasksListComponent } from './tasks-list/tasks-list.component';
 import { TaskService } from './task.service';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {MatDialogModule} from '@angular/material/dialog';
+import {MatTabsModule} from '@angular/material/tabs';
+import {MatInputModule} from '@angular/material/input';
 
 
 @NgModule({
@@ -19,7 +21,9 @@ import {MatDialogModule} from '@angular/material/dialog';
     BrowserModule,
     HttpClientModule,
     BrowserAnimationsModule,
-    MatDialogModule
+    MatDialogModule,
+    MatTabsModule,
+    MatInputModule
   ],
   providers: [ TaskService ],
   bootstrap: [AppComponent]
