@@ -31,9 +31,7 @@ export class TaskService {
     }
 
     updateTask(id) {
-
-      
-      return this.http.put(this.tasksUrl, id);
+      //return this.http.put(this.tasksUrl, id);
     }
 
     deleteTask(id) {
