@@ -6,6 +6,9 @@ import { NgModule } from '@angular/core';
 import { AppComponent } from './app.component';
 import { TasksListComponent } from './tasks-list/tasks-list.component';
 import { TaskService } from './task.service';
+import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
+import {MatDialogModule} from '@angular/material/dialog';
+
 
 @NgModule({
   declarations: [
@@ -14,7 +17,9 @@ import { TaskService } from './task.service';
   ],
   imports: [
     BrowserModule,
-    HttpClientModule
+    HttpClientModule,
+    BrowserAnimationsModule,
+    MatDialogModule
   ],
   providers: [ TaskService ],
   bootstrap: [AppComponent]
