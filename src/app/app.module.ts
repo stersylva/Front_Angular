@@ -10,6 +10,7 @@ import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {MatDialogModule} from '@angular/material/dialog';
 import {MatTabsModule} from '@angular/material/tabs';
 import {MatInputModule} from '@angular/material/input';
+import { ChartsModule } from 'ng2-charts';
 
 
 @NgModule({
@@ -23,7 +24,8 @@ import {MatInputModule} from '@angular/material/input';
     BrowserAnimationsModule,
     MatDialogModule,
     MatTabsModule,
-    MatInputModule
+    MatInputModule,
+    ChartsModule
   ],
   providers: [ TaskService ],
   bootstrap: [AppComponent]

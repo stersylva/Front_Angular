@@ -31,10 +31,16 @@
       <input matInput type="text" value="pending" />
       <input matInput type="text" #qtdPending (ngModel)="qtdPending"/>
     </mat-form-field>
-    <mat-form-field>
-      <input matInput type="text" value="avarage time per task" />
-      <Span>sdad</Span>
-    </mat-form-field>
+    
+    <div style="display: block">
+      <input matInput type="text" value="Created x done tasks"/>
+      <canvas baseChart
+              [data]="pieChartData"
+              [labels]="pieChartLabels"
+              [chartType]="pieChartType"
+              (chartHover)="chartHovered($event)"
+              (chartClick)="chartClicked($event)"></canvas>
+    </div>
 
   </mat-tab>
 </mat-tab-group>

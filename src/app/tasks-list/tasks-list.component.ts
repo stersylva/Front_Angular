@@ -21,6 +21,20 @@ export class TasksListComponent implements OnInit  {
   @ViewChild('qtdPending') qtdPending: ElementRef;
 
 
+  // Pie
+  public pieChartLabels:string[] = ['Created', 'Done'];
+  public pieChartData:number[] = [];
+  public pieChartType:string = 'pie';
+ 
+  // events
+  public chartClicked(e:any):void {
+    console.log(e);
+  }
+ 
+  public chartHovered(e:any):void {
+    console.log(e);
+  }
+
   constructor(private taskService: TaskService) { }
 
   ngOnInit() {
@@ -49,6 +63,9 @@ export class TasksListComponent implements OnInit  {
         this.qtdCreated.nativeElement.value = started + pending + done;   
         this.qtdDone.nativeElement.value = done;   
         this.qtdPending.nativeElement.value = pending; 
+
+        this.pieChartData.push(this.qtdCreated.nativeElement.value);
+        this.pieChartData.push(this.qtdDone.nativeElement.value);
 
       }, error => this.errorMessage = <any> error);
      
