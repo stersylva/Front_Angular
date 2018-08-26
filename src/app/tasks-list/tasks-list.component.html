@@ -2,20 +2,22 @@
   <mat-tab label="Tasks">
     <div>
       <mat-form-field>
-        <input matInput type="text" placeholder="New task" name="task_name" formControlName="task_name" #task_name />
+        <input class="input-task" matInput type="text" placeholder="New task" name="task_name" formControlName="task_name" #task_name />
       </mat-form-field>
 
       <button mat-button (click)="addTask(task_name.value)">Add</button>
     </div>
 
     <ul *ngIf="tasks">
-      <table *ngFor="let task of tasks ">
+      <div class="d-flex tasks" *ngFor="let task of tasks ">
         <tr>
-          <td>{{task.name}}</td>
-          <td><button mat-button  ng-click="getvalue($event)" (click)="updateTask(task.id)">{{task.status}}</button></td>
-          <td><button mat-button (click)="deleteTask(task.id)">Delete</button></td>
+          <div class="task-name">
+            <td>{{task.name}}</td>
+          </div>
+            <td><button mat-button  ng-click="getvalue($event)" (click)="updateTask(task.id)">{{task.status}}</button></td>
+            <td><button mat-button (click)="deleteTask(task.id)">Delete</button></td>
         </tr>
-      </table>
+      </div>
     </ul>
   </mat-tab>
   <mat-tab label="Reports">
@@ -32,9 +34,9 @@
       <input matInput type="text" #qtdPending (ngModel)="qtdPending"/>
     </mat-form-field>
     
-    <div style="display: block">
+    <div class="div-pie-chart">
       <input matInput type="text" value="Created x done tasks"/>
-      <canvas baseChart
+      <canvas class="pie-chart" baseChart
               [data]="pieChartData"
               [labels]="pieChartLabels"
               [chartType]="pieChartType"
