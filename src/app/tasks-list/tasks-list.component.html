@@ -20,21 +20,22 @@
   </mat-tab>
   <mat-tab label="Reports">
     <mat-form-field>
-      <input matInput type="text" value="created" />
-      <Span>sdad</Span>
+      <input matInput type="text" value="created"/>
+      <input matInput type="text" #qtdCreated (ngModel)="qtdCreated"/>
     </mat-form-field>
     <mat-form-field>
       <input matInput type="text" value="done" />
-      <Span>sdad</Span>
+      <input matInput type="text" #qtdDone (ngModel)="qtdDone"/>
     </mat-form-field>
     <mat-form-field>
       <input matInput type="text" value="pending" />
-      <Span>sdad</Span>
+      <input matInput type="text" #qtdPending (ngModel)="qtdPending"/>
     </mat-form-field>
     <mat-form-field>
       <input matInput type="text" value="avarage time per task" />
       <Span>sdad</Span>
     </mat-form-field>
+
   </mat-tab>
 </mat-tab-group>
 
